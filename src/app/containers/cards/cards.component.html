@@ -1,0 +1,9 @@
+<div class="cards-wrapper">
+  <app-card *ngFor="let card of cards" [card]="card" [showCards]="showAllCards" (click)="chooseCard(card)"></app-card>
+</div>
+
+<p>Cards Left: {{leftCardsCount}}</p>
+
+<div class="finished" [@gameIsFinished]="gameIsFinished">
+  <h1>Congrats!</h1>
+</div>

@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transform: rotateX(180deg);
+  background: linear-gradient(to right bottom, #2998ff, #5643fa);
+  color: #fff;
+  transition: .5s;
+  cursor: pointer;
+
+  &.visible {
+    color: #fff;
+    transform: rotateX(0);
+  }
+
+  &.active {
+    border-color: #5643fa;
+    background: #ffb900;
+    color: #5643fa;
+
+    transform: rotateX(0);
+  }
+  &.paired {
+    background: linear-gradient(to right bottom, #55c57a, #28b485);;
+    color: #fff;
+    border-color: #fff;
+    transform: rotateX(0);
+  }
+}

@@ -1,0 +1,3 @@
+<div class="card" [class.active]="card.show" [class.paired]="card.paired" [class.visible]="showCards">
+  <span *ngIf="card.show || card.paired || showCards">{{card.value}}</span>
+</div>
