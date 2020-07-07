@@ -21,9 +21,8 @@ export class CardsComponent implements OnInit {
   gameIsFinished: string = 'false'
   min = 1
   max = 50
-  cardsCount = 30
+  leftCardsCount = 100;
   cards = []
-  leftCardsCount = this.cardsCount;
   activeCard: CardModel
   showAllCards = true
   disabled = true
@@ -35,12 +34,9 @@ export class CardsComponent implements OnInit {
 
   // generating random prime numbers between 1 and 50
   generateNumbers(min, max) {
-    while (this.cards.length < this.cardsCount) {
-      const randNumber = Math.floor(Math.random() * (max - min) + min)
-      if (!this.cards.filter(c => c.value === randNumber).length) {
-        this.cards.push(this.createCard(randNumber))
-        this.cards.push(this.createCard(randNumber))
-      }
+    for (let i = min; i <= max; i++) {
+      this.cards.push(this.createCard(i))
+      this.cards.push(this.createCard(i))
     }
     this.shuffleCards(this.cards)
   }
